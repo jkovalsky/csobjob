@@ -4,7 +4,8 @@ import { acceptCookies } from '../helpers/cookies';
 test('ČSOB pořád nabízí nějaká volná místa', async ({ page }) => {
   // Otevři domovskou stránku ČSOB
   await page.goto('https://www.csob.cz');
-  // Zavřeme cookie dialog, pokud se objeví (tlačítko na ČSOB: "Souhlasím")
+
+  // Potvrď souhlas s použitím cookies tlačítkem "Souhlasím"
   await acceptCookies(page, 'Souhlasím');
 
   // Klikni na odkaz "Kariéra v ČSOB a volná místa"
@@ -25,11 +26,16 @@ test('ČSOB pořád nabízí nějaká volná místa', async ({ page }) => {
 test('ČSOB kariérní stránka umožňuje vyhledávání pozic', async ({ page }) => {
   // Otevři kariérní stránku ČSOB
   await page.goto('https://careers.kbc-group.com/CSOB/search?locale=cs_CZ');
-  // Accept cookies on the careers site using the localized accept button name.
+  
+  // Potvrď souhlas s použitím cookies tlačítkem "Přijmout všechny soubory cookie"
   await acceptCookies(page, 'Přijmout všechny soubory cookie');
+  
+  // Vyfiltruj pozice podle klíčového slova "Test"
   await page.getByTestId('jobCard').first().waitFor();
   await page.getByTestId('searchByKeywords').fill('Test');
   await page.getByRole('button', { name: 'Vyhledat pozice' }).click();
+
+  // Ověř, že výsledky vyhledávání obsahují pozici "IT Test Manažer (m/ž)"
   await page.getByTestId('jobCard').first().waitFor();
   await expect(page.getByText('IT Test Manažer (m/ž)')).toBeVisible();
 });
