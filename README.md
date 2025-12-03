@@ -1,2 +1,2 @@
 # csobjob
-Demo of automated test of job search on ČSOB website
+Demo automatického testu který ověřuje, že stránky ČSOB umožňují vyhledávání otevřených pozic.
