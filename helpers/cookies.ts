@@ -1,12 +1,12 @@
 import { Page } from '@playwright/test';
 
 /**
- * Pokusí se přijmout cookies kliknutím na tlačítko "Souhlasím", pokud je viditelné.
- * Jedná se o pomocnou funkci na nejlepší možný pokus, která elegantně zvládá případy,
+ * Pokusí se přijmout cookies kliknutím na tlačítko se zadaným názvem,
+ * pokud je viditelné. Jedná se o pomocnou funkci, která zvládá i případy,
  * kdy dialog není přítomen nebo s ním nelze interagovat.
  * 
  * @param page Stránka Playwright na které se operace provádí
- * @param buttonName Název tlačítka pro přijetí cookies (výchozí je 'Souhlasím')
+ * @param buttonName Název tlačítka pro přijetí cookies
  */
 export async function acceptCookies(page: Page, buttonName: string): Promise<void> {
   try {

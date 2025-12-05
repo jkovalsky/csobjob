@@ -60,7 +60,7 @@ Spusťte testy v režimu s GUI (příklad pro Linux využívající váš X serv
 ```bash
 # Na dobu spuštění je nutné povolit lokálnímu root uživateli přístup k X serveru
 xhost +local:root
-docker run --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --shm-size=1g csobjob-automation-demo --headed
+docker run --rm -e DISPLAY=:0 -v /tmp/.X11-unix:/tmp/.X11-unix --shm-size=1g csobjob-automation-demo npx playwright test --headed
 xhost -local:root
 ```
 
@@ -68,6 +68,6 @@ Poznámky:
 - Na macOS/Windows budete potřebovat X server (např. XQuartz) nebo spouštět headed testy přes kontejner s VNC.
 - Docker image je založený na oficiálním Playwright image a obsahuje `npx playwright install --with-deps`, aby byly přítomny prohlížeče a závislosti.
 
-## CI
+## CI/CD
 
 V repozitáři je workflow pro GitHub Actions v `.github/workflows/playwright.yml`, které spouští Playwright testy při Push operaci nebo vytvoření Pull Requestu.
