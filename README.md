@@ -17,7 +17,7 @@ Projekt obsahuje 2 automatické testy, které postupně provedou následující 
 - otevři kariérní stránku ČSOB
 - souhlas s použitím cookies
 - vyfiltruj pozice podle klíčového slova "Test"
-- ověř, že výsledky vyhledávání obsahují pozici "IT Test Manažer (m/ž)"
+- ověř, že výsledky vyhledávání obsahují pozici "Developer automatizovaných testů (m/ž)"
 
 ## Spuštění testů
 
