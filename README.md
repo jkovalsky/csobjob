@@ -19,7 +19,7 @@ Projekt obsahuje 2 automatické testy, které postupně provedou následující 
 - vyfiltruj pozice podle klíčového slova "Test"
 - ověř, že výsledky vyhledávání obsahují pozici "IT Test Manažer (m/ž)"
 
-## Rychlý start
+## Spuštění testů
 
 Požadavky:
 - Node.js 18+ (pro Playwright)
@@ -71,3 +71,24 @@ Poznámky:
 ## CI/CD
 
 V repozitáři je workflow pro GitHub Actions v `.github/workflows/playwright.yml`, které spouští Playwright testy při Push operaci nebo vytvoření Pull Requestu.
+
+## Robot Framework
+
+Kromě implementace pomocí Playwrightu obsahuje tento repozitář také stejné testy napsané pomocí Robot Frameworku s využitím Browser knihovny.
+
+### Spuštění Robot Framework testů
+
+Nainstalujte všechny závislosti a nastavte testovací prostředí:
+```bash
+python3 -m venv venv && source venv/bin/activate && pip install -q -r requirements.txt && rfbrowser init
+```
+
+a pak už jenom spusťte testy pomocí:
+```bash
+source venv/bin/activate && robot tests/careers-test.robot
+```
+
+Paralelní běh testů je také možný:
+```bash
+source venv/bin/activate && pabot --testlevelsplit tests/careers-test.robot
+```
