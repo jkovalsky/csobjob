@@ -68,10 +68,6 @@ Poznámky:
 - Na macOS/Windows budete potřebovat X server (např. XQuartz) nebo spouštět headed testy přes kontejner s VNC.
 - Docker image je založený na oficiálním Playwright image a obsahuje `npx playwright install --with-deps`, aby byly přítomny prohlížeče a závislosti.
 
-## CI/CD
-
-V repozitáři je workflow pro GitHub Actions v `.github/workflows/playwright.yml`, které spouští Playwright testy při Push operaci nebo vytvoření Pull Requestu.
-
 ## Robot Framework
 
 Kromě implementace pomocí Playwrightu obsahuje tento repozitář také stejné testy napsané pomocí Robot Frameworku s využitím Browser knihovny.
@@ -92,3 +88,7 @@ Paralelní běh testů je také možný:
 ```bash
 source venv/bin/activate && pabot --testlevelsplit tests/careers-test.robot
 ```
+## CI/CD
+
+V repozitáři jsou také 2 workflow konfigurace pro GitHub Actions v `.github/workflows/playwright.yml` a `.github/workflows/robot.yml`,
+které spouští Playwright i Robot Framework testy při každé Push operaci nebo vytvoření Pull Requestu.
