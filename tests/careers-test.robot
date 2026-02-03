@@ -42,9 +42,9 @@ ${BROWSER}    chromium
     Sleep    2s
     Click  role=button[name="Vyhledat pozice"]
 
-    # Ověř, že výsledky vyhledávání obsahují pozici "Developer automatizovaných testů (m/ž)"
+    # Ověř, že výsledky vyhledávání obsahují pozici "IT Test Manažer (m/ž)"
     Wait For Elements State    [data-testid="jobCard"] >> nth=0    visible
-    Wait For Elements State    text=Developer automatizovaných testů (m/ž)    visible
+    Wait For Elements State    text=IT Test Manažer (m/ž)    visible
 
 *** Keywords ***
 Otevři prohlížeč a načti stránku
