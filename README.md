@@ -3,7 +3,7 @@ Demo automatického testu který ověřuje, že stránky ČSOB umožňují vyhle
 
 ## Obsah projektu
 
-Projekt obsahuje 2 automatické testy, které postupně provedou následující akce:
+Projekt obsahuje 5 automatických testů, které postupně provedou následující akce:
 
 ### 1. Test "ČSOB pořád nabízí nějaká volná místa"
 - otevři domovskou stránku ČSOB
@@ -18,6 +18,27 @@ Projekt obsahuje 2 automatické testy, které postupně provedou následující 
 - souhlas s použitím cookies
 - vyfiltruj pozice podle klíčového slova "Test"
 - ověř, že výsledky vyhledávání obsahují pozici "IT Test Manažer (m/ž)"
+
+### 3. Test "Na ČSOB stránce funguje chatovací služba"
+- otevři domovskou stránku ČSOB
+- souhlas s použitím cookies
+- otevři chatovací službu
+- zavři chatovací okno
+
+### 4. Test "Chatovací služba ČSOB odpovídá na dotazy"
+- otevři domovskou stránku ČSOB
+- souhlas s použitím cookies
+- otevři chatovací službu
+- zeptej se "Kde všude má ČSOB bankomaty?"
+- ověř, že odpověď obsahuje text "Pobočky, bankomaty i pošty najdete tady."
+
+### 5. Test "Uživatel se dostane ke kurzovnímu lístku ČSOB"
+- otevři domovskou stránku ČSOB
+- souhlas s použitím cookies
+- otevři chatovací službu
+- zeptej se "Jaký je aktuální kurz USD na CZK?"
+- ověř, že odpověď obsahuje text "Na kurzovní lístek se podíváte tady."
+- klikni na odkaz "Kurzovní lístek" v chatu, ověř otevření stránky a použij převodník měny pro 100 USD
 
 ## Spuštění testů
 
