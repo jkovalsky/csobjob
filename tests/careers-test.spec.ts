@@ -36,9 +36,9 @@ test('ČSOB kariérní stránka umožňuje vyhledávání pozic', async ({ page 
   await page.getByTestId('searchByKeywords').fill('Test');
   await page.getByRole('button', { name: 'Vyhledat pozice' }).click();
 
-  // Ověř, že výsledky vyhledávání obsahují pozici "Developer automatizovaných testů (m/ž)"
+  // Ověř, že výsledky vyhledávání obsahují pozici "IT Test Manažer (m/ž)"
   await page.getByTestId('jobCard').first().waitFor();
-  await expect(page.getByText('Developer automatizovaných testů (m/ž)')).toBeVisible();
+  await expect(page.getByText('IT Test Manažer (m/ž)')).toBeVisible();
 });
 
 test('Na ČSOB stránce funguje chatovací služba', async ({ page }) => {
@@ -56,9 +56,9 @@ test('Chatovací služba ČSOB odpovídá na dotazy', async ({ page }) => {
   await page.goto('https://www.csob.cz');
   await acceptCookies(page, 'Souhlasím');
 
-  // Zkontroluj odpověď chatovací služby na otázku "Má ČSOB bankomat v Bohumíně?"
+  // Zkontroluj odpověď chatovací služby na otázku "Kde všude má ČSOB bankomaty?"
   await openChat(page);
-  const question = 'Má ČSOB bankomat v Bohumíně?';
+  const question = 'Kde všude má ČSOB bankomaty?';
   const expectedAnswerFragment = 'Pobočky, bankomaty i pošty najdete tady.';
   await checkChatAnswer(page, question, expectedAnswerFragment);
 });
