@@ -56,9 +56,9 @@ test('Chatovací služba ČSOB odpovídá na dotazy', async ({ page }) => {
   await page.goto('https://www.csob.cz');
   await acceptCookies(page, 'Souhlasím');
 
-  // Zkontroluj odpověď chatovací služby na otázku "Má ČSOB bankomat v Bohumíně?"
+  // Zkontroluj odpověď chatovací služby na otázku "Kde všude má ČSOB bankomaty?"
   await openChat(page);
-  const question = 'Má ČSOB bankomat v Bohumíně?';
+  const question = 'Kde všude má ČSOB bankomaty?';
   const expectedAnswerFragment = 'Pobočky, bankomaty i pošty najdete tady.';
   await checkChatAnswer(page, question, expectedAnswerFragment);
 });
