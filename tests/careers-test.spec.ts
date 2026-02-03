@@ -35,7 +35,7 @@ test('ČSOB kariérní stránka umožňuje vyhledávání pozic', async ({ page 
   await page.getByTestId('searchByKeywords').fill('Test');
   await page.getByRole('button', { name: 'Vyhledat pozice' }).click();
 
-  // Ověř, že výsledky vyhledávání obsahují pozici "Developer automatizovaných testů (m/ž)"
+  // Ověř, že výsledky vyhledávání obsahují pozici "IT Test Manažer (m/ž)"
   await page.getByTestId('jobCard').first().waitFor();
-  await expect(page.getByText('Developer automatizovaných testů (m/ž)')).toBeVisible();
+  await expect(page.getByText('IT Test Manažer (m/ž)')).toBeVisible();
 });
